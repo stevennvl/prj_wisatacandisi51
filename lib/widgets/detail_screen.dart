@@ -166,7 +166,7 @@ class DetailScreen extends StatelessWidget {
                       itemCount: candi.imageUrls.length,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: EdgeInsets.only(right: 8),
+                          padding: const EdgeInsets.only(right: 8),
                           child: GestureDetector(
                             onTap: () {},
                             child: Container(
