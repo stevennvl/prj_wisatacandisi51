@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prj_wisatacandisi51/widgets/profile_info_item.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -83,34 +84,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 4,
                 ),
                 // Pengguna
-                Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 3,
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.lock,
-                            color: Colors.amber,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Pengguna',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                        child: Text(
-                      ": $username",
-                      style: const TextStyle(fontSize: 18),
-                    ))
-                  ],
-                ),
+                ProfileInfoItem(
+                    icon: Icons.lock,
+                    label: 'Pengguna',
+                    value: username,
+                    iconColor: Colors.amber),
                 const SizedBox(
                   height: 20,
                 ),
@@ -121,35 +99,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 4,
                 ),
                 // Nama
-                Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 3,
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.person,
-                            color: Colors.blue,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Nama',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                        child: Text(
-                      ": $fullName",
-                      style: const TextStyle(fontSize: 18),
-                    )),
-                    if (isSigned) const Icon(Icons.edit)
-                  ],
-                ),
+                ProfileInfoItem(
+                    icon: Icons.person,
+                    label: 'Nama',
+                    value: fullName,
+                    showEditIcon: isSigned,
+                    onEditPressed: () {
+                      // Tindakan saat ikon edit ditekan
+                      debugPrint("Icon edit ditekan ...");
+                    },
+                    iconColor: Colors.blue),
                 const SizedBox(
                   height: 20,
                 ),
@@ -160,34 +119,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 4,
                 ),
                 // Favorit
-                Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 3,
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Favourite',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                        child: Text(
-                      ": $favouritCandiCount",
-                      style: const TextStyle(fontSize: 18),
-                    ))
-                  ],
-                ),
+                ProfileInfoItem(
+                    icon: Icons.favorite,
+                    label: 'Favorit',
+                    value: favouritCandiCount > 0 ? "$favouritCandiCount" : '',
+                    iconColor: Colors.red),
+
                 // TODO: 4. Profile Header
                 const SizedBox(
                   height: 4,
