@@ -3,6 +3,7 @@ import 'package:prj_wisatacandisi51/widgets/detail_screen.dart';
 import 'package:prj_wisatacandisi51/data/candi_data.dart';
 import 'package:prj_wisatacandisi51/widgets/profile_screen.dart';
 import 'package:prj_wisatacandisi51/widgets/signin_screen.dart';
+import 'package:prj_wisatacandisi51/widgets/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
                 primary: Colors.deepPurple, surface: Colors.deepPurple[50]),
         useMaterial3: true,
       ),
-      home: const SignInScreen(),
+      home: const SignUpScreen(),
       // const ProfileScreen(),
       // DetailScreen(candi: candiList[0]),
     );
