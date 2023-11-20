@@ -25,15 +25,18 @@ class DetailScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   )),
+              //tombol back kustom
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.deepPurple.withOpacity(0.5),
+                      color: Colors.deepPurple.withOpacity(0.8),
                       shape: BoxShape.circle),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(
                       Icons.arrow_back,
                     ),
